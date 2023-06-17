@@ -5,11 +5,11 @@ server nhận thông báo cập nhật database và báo lên cho client cập n
 # Cài đặt 
 Cài đặt nodejs 
 
-Set up server
-npm install; npm start
+Set up server: 
+ npm install; npm start
 
-Set up client
-npm install; npm run dev
+Set up client: 
+ npm install; npm run dev
 
 # LƯU Ý: project đang trong quá trình thực hiện vẫn còn nhiều lỗi và chức năng chưa hoàn thành
 
