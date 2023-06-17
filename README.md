@@ -4,6 +4,7 @@ server nhận thông báo cập nhật database và báo lên cho client cập n
 
 # Cài đặt 
 Cài đặt nodejs 
+
 Set up server
 npm install; npm start
 
