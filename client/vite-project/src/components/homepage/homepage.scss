@@ -1,0 +1,207 @@
+@import 'leaflet/dist/leaflet.css';
+
+.leaflet-container {
+    position: absolute;
+    width: 60%;
+    height: 86vh;
+    right: 50px;
+    border: 4px solid black;
+    border-radius: 30px;
+    bottom: 20px;
+
+    .geosearch.leaflet-bar.leaflet-control.leaflet-control-geosearch.leaflet-geosearch-button {
+        margin-left: 335px;
+        margin-top: 100px;
+    }
+
+
+    .popup {
+        display: block !important;
+    }
+}
+
+
+.addBinContainer {
+    
+    .buttonaddbin{
+        background-color: #fff;
+        border: 2px solid #ccc;
+        width: 33px;
+        height: 33px;
+        position: relative;
+        z-index: 1000;
+        left: 10px;
+        top: 100px;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover{
+            
+                background-color: #f4f4f4;
+                color: #747bff;
+            
+        }
+        .faicon {
+            margin-top: 6px;
+            font-size: 18px;
+            
+        }
+    }
+}
+
+.markercustom {
+    filter: hue-rotate(250deg);
+
+}
+
+.background {
+    background: rgb(30, 28, 42);
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    img{
+        width: 70px;
+        margin: 40px 0;
+        margin-left: 70px;
+
+    }
+    hr{
+        width: 13%;
+        margin-left: 10px;
+         opacity: 0.2;
+     }
+    .sidebar {
+        h2{
+            margin: 10px 0;
+            padding: 6px 0;
+            // margin-left: 75px;
+            width: 14.3%;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .home{
+            background-color: #000;
+        }
+    }
+
+    .content {
+        background-color: rgb(51, 51, 52);
+        width: 84%;
+        height: 90%;
+        position: absolute;
+        right: 25px;
+        top: 60px;
+        border-radius: 30px;
+
+        .overview {
+            background: rgb(30, 28, 42);
+            width: 24%;
+            height: 55%;
+            border-radius: 30px;
+            margin: 0 16px;
+            margin-top: 23px;
+
+            h2{
+                color: white;
+                margin-left: 30px;
+                padding: 10px 0;
+            }
+
+            hr{
+               width: 80%;
+               margin-left: 30px;
+                opacity: 0.5;
+            }
+
+            p{
+               margin-left: 30px;
+                color: white;
+                padding: 16px 0;
+                font-size: 20px;
+            }
+        }
+
+        .dashboard {
+            background: rgb(30, 28, 42);
+            width: 24%;
+            height: 36.5%;
+            border-radius: 30px;
+            margin: 0 16px;
+            margin-top: 23px;
+
+            h2{
+                color: white;
+                margin-left: 30px;
+                padding: 10px 0;
+            }
+
+            hr{
+                width: 80%;
+                margin-left: 30px;
+                 opacity: 0.5;
+             }
+
+            .faMap{
+                background-color: #ccc;
+                width: 40%;
+                height: 40%;
+                border-radius: 35px;
+                margin-top: 30px;
+                margin-left: 20px;
+                text-align: center;
+                float: left;
+                cursor: pointer;
+                .faicon{
+                    margin-top: 15px;
+                    font-size: 50px;
+                }
+            }
+
+            .faRoute{
+                background-color: #ccc;
+                width: 40%;
+                height: 40%;
+                border-radius: 35px;
+                margin-top: 30px;
+                margin-left: 165px;
+                text-align: center;
+                cursor: pointer;
+                p{
+                    font-family: sans-serif;
+                }
+                .faicon{
+                    margin-top: 15px;
+                    font-size: 50px;
+                }
+                
+            }
+        }
+    }
+}
+//   .leaflet-control-geosearch form {
+//     display: block !important;
+//     position: fixed;
+//     top: 10px;
+//     left: 10px;
+//     right: 10px;
+//     margin: 0 auto;
+//   }
+  
+//   .leaflet-control-geosearch form input {
+//     width: 100%;
+//   }
+  
+  .leaflet-control-geosearch .leaflet-bar-part {
+    // display: none;
+  }
+
+  .leaflet-geosearch-button {
+    display: none;
+  }
+
+//   .leaflet-geosearch-button form.open {
+//     width: 1000%;
+// }
