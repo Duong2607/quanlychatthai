@@ -15,4 +15,4 @@ Set up client:
 
 # Demo tạm thời:
 
-https://github.com/Duong2607/project2_quanlychatthai/assets/120171585/043c01ff-d7e3-44e2-abe9-99f231fa5706
+https://github.com/Duong2607/project2_quanlychatthai/assets/120171585/96a2aac8-3072-4353-a763-578e711bc887
