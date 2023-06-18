@@ -13,3 +13,6 @@ Set up client:
 
 # LƯU Ý: project đang trong quá trình thực hiện vẫn còn nhiều lỗi và chức năng chưa hoàn thành
 
+# Demo tạm thời:
+
+https://github.com/Duong2607/project2_quanlychatthai/assets/120171585/043c01ff-d7e3-44e2-abe9-99f231fa5706
