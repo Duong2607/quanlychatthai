@@ -43,7 +43,7 @@ async function mqttconnect(io) {
                                                 
                                             }
 
-                                            resolve(bin.status);
+                                            resolve(true);
                                         } else {
                                             resolve(false);
                                         }

@@ -5,9 +5,9 @@
 
 
 
-const char* ssid = "Tuan_Lan"; // Ten wifi
-const char* password = "bokhongbiet"; // Mat khau wifi
-const char* mqtt_server = "192.168.1.6";
+const char* ssid = "...."; // Ten wifi
+const char* password = "...."; // Mat khau wifi
+const char* mqtt_server = "...."; // ip local broker 
 
 const int trigPin = D7; 
 const int echoPin = D8; 
