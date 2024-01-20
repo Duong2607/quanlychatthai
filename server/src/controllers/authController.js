@@ -23,7 +23,33 @@ const   authController = {
             res.status(500).json(err);
     }
 
+    },
+
+    //login 
+    loginUser: async(req, res)=>{
+        try{
+            const user = await User.findOne({username: req.body.username});
+            if(!user){
+                res.status(404).json("wrong username");
+
+            }
+            const validPassword = await bcrypt.compare(
+                req.body.password,
+                user.password
+            );
+            if(!validPassword){
+                    res.status(404).json("wrong password");
+
+                }
+            if(user && validPassword){
+                res.status(200).json(user);
+            }
+
+
+        }catch(err){
+            res.status(500).json(err);
+        }
     }
-}
+};
 
 module.exports = authController;
