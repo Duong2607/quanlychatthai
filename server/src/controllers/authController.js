@@ -1,19 +1,19 @@
-const bcrypt = require('bcrypt');
 const User = require('../model/user');
+const bcrypt = require('bcrypt');
 
 
 const   authController = {
     //REGISTER
     registerUser: async(req, res) => {
         try{
-            const salt = await bscript.genSalt(10);
-            const hashed = await bscript.hash(res.body.password, salt);
+            // const salt = await bcrypt.genSalt(10);
+            // const hashed = await bcrypt.hash(res.body.password, salt);
 
             //Create new user
             const newUser = await new User({
                 username: req.body.username,
                 email: req.body.email,
-                password: hashed,
+                password: req.body.password,
             });
 
             //save to database
@@ -33,14 +33,16 @@ const   authController = {
                 res.status(404).json("wrong username");
 
             }
-            const validPassword = await bcrypt.compare(
-                req.body.password,
-                user.password
-            );
-            if(!validPassword){
-                    res.status(404).json("wrong password");
+            // const validPassword = await bcrypt.compare(
+            //     req.body.password,
+            //     user.password
+            // );
+            const validPassword = await User.findOne({password: req.body.password});
+            if(!validPassword) {
+                res.status(404).json("wrong password");
 
-                }
+            }
+            
             if(user && validPassword){
                 res.status(200).json(user);
             }
