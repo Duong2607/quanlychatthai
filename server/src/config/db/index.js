@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 async function connect() {
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/quan_ly_chat_thai',{
+        await mongoose.connect('mongodb+srv://vanquangha5602:quang111@cluster0.yltox9v.mongodb.net/?retryWrites=true&w=majority',{
         
 
         });
