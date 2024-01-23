@@ -1,5 +1,6 @@
 const User = require('../model/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 
 const   authController = {
@@ -25,6 +26,26 @@ const   authController = {
 
     },
 
+    // generate access token
+    generateAccessToken: (user) => {
+        return jwt.sign({
+            id: user.id,
+            admin: user.admin,
+        },
+        "secretkey",{expiresIn: "1d" }
+        );
+    },
+
+    // generate refresh token
+    generateRefreshToken: (user) => {
+        return jwt.sign({
+            id: user.id,
+            admin: user.admin,
+        },
+        "secretkey",{expiresIn: "365d" }
+        );
+    },
+
     //login 
     loginUser: async(req, res)=>{
         try{
@@ -44,7 +65,11 @@ const   authController = {
             }
             
             if(user && validPassword){
-                res.status(200).json(user);
+                const accessToken = authController.generateAccessToken(user);
+                const refreshToken = authController.generateRefreshToken(user);
+                const {password, ...others} = user._doc;
+
+                res.status(200).json({...others,accessToken,refreshToken});
             }
 
 
