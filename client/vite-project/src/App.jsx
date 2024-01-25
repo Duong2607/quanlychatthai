@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import HomePage from './components/homepage/homepage'
+// import HomePage from './components/homepage/homepage'
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
+
+import HomePage1 from "./components/Home/HomePage1";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,11 +19,16 @@ function App() {
 
   return (
   
-    <>
-      <HomePage
-    
-      ></HomePage>
-    </>
+    <Router>
+      <NavBar />
+      <div className="App"> 
+        <Routes>
+          <Route path="/" element={<HomePage1 />} />
+          <Route path="/login" element={ <Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </Router>
     
     
   )
