@@ -1,9 +1,9 @@
 .home-container{
     display: flex;
-    background-color: rgb(236, 235, 235);
-    height:500px;
-    width:100%;
-    margin-top: 70px;
+    background-color: #F5F5F5;
+    height:515px;
+    width:94%;
+    margin: 63px 0px 0px 36px;
     text-align: center;
     align-items: center;
     flex-direction: column;

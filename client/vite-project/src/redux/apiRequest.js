@@ -4,6 +4,8 @@ import { registerFailed, registerStart, registerSuccess } from "./authSlice";
 import { logOutFailed, logOutStart, logOutSuccess } from "./authSlice";
 import { getUsersStart, getUsersFailed, getUsersSuccess } from "./userSlice";
 import { deleteUserStart, deleteUserFailed, deleteUserSuccess } from "./userSlice";
+import { getUserStart, getUserFailed, getUserSuccess } from "./userSlice";
+import { updateUserStart, updateUserFailed, updateUserSuccess } from "./userSlice";
 
 export const loginUser = async (user, dispatch, navigate) => {
   dispatch(loginStart());
@@ -52,14 +54,39 @@ export const getAllUsers = async (accessToken, dispatch) => {
   }
 };
 
-export const deleteUser = async (accessToken, dispatch, id) => {
+export const deleteUser = async (accessToken, dispatch, id, navigate) => {
   dispatch(deleteUserStart());
   try {
     const res = await axios.delete(`/v1/user/${id}`, {
       headers: { token: `Bearer ${accessToken}` },
     });
-    dispatch(deleteUserSuccess(res));
+    dispatch(deleteUserSuccess("Xoá thành công"));
+    navigate("/user");
   } catch (err) {
-    dispatch(deleteUserFailed(err.response.data));
+    dispatch(deleteUserFailed("Không thành công"));
+  }
+};
+
+export const getUser = async (accessToken, dispatch, id) => {
+  dispatch(getUserStart());
+  try {
+    const res = await axios.get(`/v1/user/${id}`, {
+      headers: { token: `Bearer ${accessToken}` },
+    });
+    dispatch(getUserSuccess(res));
+  } catch (err) {
+    dispatch(getUserFailed());
+  }
+};
+
+export const updateUser = async (accessToken, dispatch, id, user) => {
+  dispatch(updateUserStart());
+  try {
+    const res = await axios.put(`/v1/user/${id}`, user, {
+      headers: { token: `Bearer ${accessToken}` },
+    });
+    dispatch(updateUserSuccess(res));
+  } catch (err) {
+    dispatch(updateUserFailed());
   }
 };
