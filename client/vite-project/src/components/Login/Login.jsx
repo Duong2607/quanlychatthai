@@ -16,7 +16,6 @@ const Login = () => {
       password: password,
     };
     loginUser(newUser, dispatch, navigate);
-    console.log(newUser);
   };
   return (
     <section className="login-container">

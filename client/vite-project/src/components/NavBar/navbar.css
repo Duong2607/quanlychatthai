@@ -1,7 +1,11 @@
 .navbar-container{
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 1rem 1.5rem;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: rgb(228, 228, 228);
     align-items: center;
 }
