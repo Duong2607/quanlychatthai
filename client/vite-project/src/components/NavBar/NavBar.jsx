@@ -12,6 +12,7 @@ const NavBar = () => {
   const id = user?._id;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [selectedLink, setSelectedLink] = useState("login");
   // let axiosJWT = createAxios(user,dispatch,logOutSuccess);
 
   const handleLogout = () => {
@@ -19,9 +20,9 @@ const NavBar = () => {
   }
   return (
     <nav className="navbar-container">
-      <Link to="/" className="navbar-home"> Home </Link>
+      <Link to="/" className={`navbar-home ${selectedLink === "home" ? "selected" : ""}`} onClick={() => setSelectedLink("home")}> Home </Link>
       {user?.admin ? (
-        <Link to="/user" className="navbar-alluser"> User </Link>
+        <Link to="/user" className={`navbar-alluser ${selectedLink === "user" ? "selected" : ""}`} onClick={() => setSelectedLink("user")}> User </Link>
       ) : (
         <></>
       )}
@@ -33,8 +34,8 @@ const NavBar = () => {
         </>
       ) : (
         <>
-          <Link to="/login" className="navbar-login"> Login </Link>
-          <Link to="/register" className="navbar-register"> Register</Link>
+          <Link to="/login" className={`navbar-login ${selectedLink === "login" ? "selected" : ""}`} onClick={() => setSelectedLink("login")}> Login </Link>
+          <Link to="/register" className={`navbar-register ${selectedLink === "register" ? "selected" : ""}`} onClick={() => setSelectedLink("register")}> Register</Link>
         </>
       )}
     </nav>

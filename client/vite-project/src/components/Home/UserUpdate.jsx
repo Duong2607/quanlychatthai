@@ -34,8 +34,10 @@ const User = () => {
     };
 
     const handleDelete = (id) => {
-        deleteUser(user?.accessToken, dispatch, id, navigate)
-    }
+        if (window.confirm("Bạn có đồng ý xoá tài khoản này không??")) {
+            deleteUser(user?.accessToken, dispatch, id, navigate);
+        }
+      }
 
     return (
         <main className="userUpdate-container">

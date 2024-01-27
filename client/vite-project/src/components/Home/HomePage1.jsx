@@ -55,25 +55,39 @@ const HomePage = () => {
   }, [msgDelete]);
 
   const handleDelete = (id) => {
-    deleteUser(user?.accessToken, dispatch, id)
+    if (window.confirm("Are you sure??")) {
+      deleteUser(user?.accessToken, dispatch, id);
+    }
   }
+
+  const handleUpdate = (id) => {
+    navigate(`/user/update/${id}`)
+  }
+
 
   return (
     <main className="home-container">
-      <div className="home-title">User List</div>
+      <div className="home-title">Danh sách tài khoản</div>
       <div className="home-userlist">
         {userList?.map((user) => {
           return (
             <div className="user-container">
-              <Link to={`/user/update/${user._id}`} className="home-user">
-                <div>{user.username}</div>
-                <div><strong>{user.admin ? "Admin" : "User"}</strong></div>
+              <Link to={`#`} className="home-user">
+                <div>{user.admin ? "Admin" : "User"}</div>
+                <div style={{fontWeight: 950, fontSize: '1.1rem'}} >{user.username}</div>
+                <div style={{fontWeight: 750, fontSize: '0.7rem', marginTop: '7px', overflowWrap: 'break-word', }}>{user.email}</div>
               </Link>
-              <div
-                className="delete-user"
-                onClick={() => handleDelete(user._id)}
-              >
-                Delete
+              <div className="user-sua-xoa">
+                <div
+                  className="sua-user"
+                  onClick={() => handleUpdate(user._id)}>
+                  Sửa
+                </div>
+                <div
+                  className="delete-user"
+                  onClick={() => handleDelete(user._id)}>
+                  Xoá
+                </div>
               </div>
             </div>
           );
