@@ -12,6 +12,7 @@ import UserUpdate from "./components/Home/UserUpdate";
 import UserInfo from "./components/Home/UserInfo";
 import BinUpdate from "./components/Bin/BinUpdate";
 import AllBin from "./components/Bin/AllBin";
+import AddNewBin from "./components/Bin/AddNewBin";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
@@ -33,6 +34,7 @@ function App() {
           <Route path="/user/update/:userId" element={<UserUpdate />} />
           <Route path="/bin" element={<AllBin />} />
           <Route path="/bin/update/:binId" element={<BinUpdate />} />
+          <Route path="/bin/add" element={<AddNewBin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

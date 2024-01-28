@@ -8,7 +8,7 @@ import { getUserStart, getUserFailed, getUserSuccess } from "./userSlice";
 import { updateUserStart, updateUserFailed, updateUserSuccess } from "./userSlice";
 import { getBinsStart, getBinsFailed, getBinsSuccess } from "./binSlice";
 import { deleteBinStart, deleteBinFailed, deleteBinSuccess } from "./binSlice";
-import { getBinStart, getBinFailed, getBinSuccess } from "./binSlice";
+import { addBinStart, addBinFailed, addBinSuccess } from "./binSlice";
 import { updateBinStart, updateBinFailed, updateBinSuccess } from "./binSlice";
 
 export const loginUser = async (user, dispatch, navigate) => {
@@ -116,6 +116,17 @@ export const deleteBin = async (dispatch, binId, navigate) => {
     navigate("/bin");
   } catch (err) {
     dispatch(deleteBinFailed("Không thành công"));
+  }
+};
+
+export const addBin = async ( dispatch, bin, navigate) => {
+  dispatch(addBinStart());
+  try {
+    const res = await axios.post("/api/add-new-bin", bin,);
+    dispatch(addBinSuccess(res));
+    navigate("/bin")
+  } catch (err) {
+    dispatch(addBinFailed());
   }
 };
 

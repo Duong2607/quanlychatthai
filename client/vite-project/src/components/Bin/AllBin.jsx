@@ -19,7 +19,7 @@ const AllBin = () => {
     if (user?.accessToken) {
       getAllBins(dispatch);
     }
-  },[msgDelete]);
+  }, [msgDelete]);
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure??")) {
@@ -33,17 +33,28 @@ const AllBin = () => {
 
 
   return (
-    <main className="home-container">
-      <div className="home-title">Danh sách thùng rác</div>
+    <main className="homeBin-container">
+
+      <Link to={"/bin/add"} className="homeBin-title-container">
+        <div className="homeBin-title">Danh sách thùng rác</div>
+        <div className="addNewBin-container">
+          <div style={{ display: 'flex', alignItems: 'flex-start', color: "#fff" }}>
+            <i class="fa-solid fa-trash-can fa-2x"></i>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div className="addNewBin"> Thêm thùng rác </div>
+        </div>
+      </Link>
+
       <div className="home-userlist">
         {binList.bins?.map((bin) => {
           return (
-            <div className="user-container">
-              <Link to={`#`} className="home-user">
+            <div className="bin-container">
+              <Link to={`#`} className="home-bin">
                 <div><i className="fa-regular fa-trash-can fa-2x"></i></div>
-                <div style={{fontWeight: 950, fontSize: '1rem'}} >{bin.ip}</div>
-                <div style={{fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.lat}</div>
-                <div style={{fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.lng}</div>
+                <div style={{ fontWeight: 950, fontSize: '1rem' }} >{bin.ip}</div>
+                <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.lat}</div>
+                <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.lng}</div>
               </Link>
 
               <div className="user-sua-xoa">

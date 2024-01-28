@@ -69,6 +69,19 @@ const binSlice = createSlice({
             state.bin.isFetching = false;
             state.bin.error = true;
         },
+
+        addBinStart: (state) =>{
+            state.bin.isFetching = true;
+        },
+        addBinSuccess: (state,action) => {
+            state.bin.isFetching = false;
+            state.bin.binn = action.payload;
+            state.bin.error = false;
+        },
+        addBinFailed: (state) =>{
+            state.bin.isFetching = false;
+            state.bin.error = true;
+        },
     }
 });
 
@@ -88,6 +101,10 @@ export const {
     updateBinStart,
     updateBinFailed,
     updateBinSuccess,
+
+    addBinStart,
+    addBinFailed,
+    addBinSuccess,
 
 } = binSlice.actions;
 

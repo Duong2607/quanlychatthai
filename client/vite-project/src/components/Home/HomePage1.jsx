@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers, deleteUser } from "../../redux/apiRequest";
 import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import * as jwt_decode from "jwt-decode";
 import "./home.css";
 
 const HomePage = () => {
@@ -12,38 +10,6 @@ const HomePage = () => {
   const msgDelete = useSelector((state) => state.user?.msg);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // let axiosJWT = axios.create();
-
-  // const refreshToken = async () => {
-  //   try {
-  //     const res = await axios.post("/v1/auth/refresh", {
-  //       withCredentials: true,
-  //     });
-  //     return res.data;
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
-  // axiosJWT.interceptors.request.use(
-  //   async (config) => {
-  //     let date = new Date();
-  //     const decodedToken = jwt_decode(user?.accessToken);
-  //     if (decodedToken.exp < date.getTime() / 1000) {
-  //       const data = await refreshToken();
-  //       const refreshUser = {
-  //         ...user,
-  //         accessToken: data.accessToken,
-  //       };
-  //       dispatch(loginSuccess(refreshUser));
-  //       config.headers["token"] = "Bearer " + data.accessToken;
-  //     }
-  //     return config;
-  //   },
-  //   (err) => {
-  //     return Promise.reject(err);
-  //   }
-  // );
 
   useEffect(() => {
     if (!user) {
@@ -73,9 +39,13 @@ const HomePage = () => {
           return (
             <div className="user-container">
               <Link to={`#`} className="home-user">
-                <div>{user.admin ? "Admin" : "User"}</div>
-                <div style={{fontWeight: 950, fontSize: '1.1rem'}} >{user.username}</div>
-                <div style={{fontWeight: 750, fontSize: '0.7rem', marginTop: '7px', overflowWrap: 'break-word', }}>{user.email}</div>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  {user.admin ? (<i class="fa-solid fa-user fa-2x"></i>
+                  ) : ( <i class="fa-regular fa-user fa-2x"></i>)}
+                  <div style={{ fontWeight: 650, fontSize: '1.2rem', marginLeft: '7px' }}>{user.admin ? "Admin" : "User"}</div>
+                </div>
+                <div style={{ fontWeight: 950, fontSize: '1.1rem', marginTop: '7px' }} >{user.username}</div>
+                <div style={{ fontWeight: 750, fontSize: '0.7rem', marginTop: '7px', overflowWrap: 'break-word', }}>{user.email}</div>
               </Link>
               <div className="user-sua-xoa">
                 <div
