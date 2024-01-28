@@ -20,22 +20,41 @@ const NavBar = () => {
   }
   return (
     <nav className="navbar-container">
-      <Link to="/" className={`navbar-home ${selectedLink === "home" ? "selected" : ""}`} onClick={() => setSelectedLink("home")}> Home </Link>
+      <div>
+        <i className="fa-solid fa-house icon-home"></i>
+        <Link to="/" className={`navbar-home ${selectedLink === "home" ? "selected" : ""}`} onClick={() => setSelectedLink("home")}> Home </Link>
+      </div>
       {user?.admin ? (
-        <Link to="/user" className={`navbar-alluser ${selectedLink === "user" ? "selected" : ""}`} onClick={() => setSelectedLink("user")}> User </Link>
+        <div>
+          <i class="fa-solid fa-users-gear icon-alluser"></i>
+          <Link to="/user" className={`navbar-alluser ${selectedLink === "alluser" ? "selected" : ""}`} onClick={() => setSelectedLink("alluser")}> User </Link>
+        </div>
+
       ) : (
         <></>
       )}
 
       {user ? (
         <>
-          <p className="navbar-user">Hi, <span>  {user.username} </span> </p>
-          <Link to="/logout" className="navbar-logout" onClick={handleLogout}> Log out</Link>
+          <div>
+            <i className="far fa-user-circle icon-user"></i>
+            <Link to={`/user-information/${user._id}`} className={`navbar-user ${selectedLink === "user" ? "selected" : ""}`} onClick={() => setSelectedLink("user")}> <p>Hi, <span>{user.username}</span> </p> </Link>
+          </div>
+          <div>
+            <i className="fa-solid fa-right-to-bracket icon-logout"></i>
+            <Link to="/logout" className="navbar-logout" onClick={handleLogout}> Log out</Link>
+          </div>
         </>
       ) : (
         <>
-          <Link to="/login" className={`navbar-login ${selectedLink === "login" ? "selected" : ""}`} onClick={() => setSelectedLink("login")}> Login </Link>
-          <Link to="/register" className={`navbar-register ${selectedLink === "register" ? "selected" : ""}`} onClick={() => setSelectedLink("register")}> Register</Link>
+          <div>
+            <i class="fa-solid fa-arrow-right-to-bracket icon-login"></i>
+            <Link to="/login" className={`navbar-login ${selectedLink === "login" ? "selected" : ""}`} onClick={() => setSelectedLink("login")}> Login </Link>
+          </div>
+          <div>
+            <i class="fa-solid fa-user-plus icon-register"></i>
+            <Link to="/register" className={`navbar-register ${selectedLink === "register" ? "selected" : ""}`} onClick={() => setSelectedLink("register")}> Register</Link>
+          </div>
         </>
       )}
     </nav>

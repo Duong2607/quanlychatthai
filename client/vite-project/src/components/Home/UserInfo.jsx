@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getUser, updateUser, deleteUser } from "../../redux/apiRequest";
 import "./userUpdate.css";
 
-const User = () => {
+const UserInfo = () => {
     const { userId } = useParams();
     const user = useSelector((state) => state.auth.login?.currentUser);
     const userInfo = useSelector((state) => state.user.user?.userr);
@@ -13,7 +13,6 @@ const User = () => {
     const [password, setPassword] = useState("");
     const [admin, setAdmin] = useState(false);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (user) {
@@ -33,12 +32,6 @@ const User = () => {
         updateUser(user?.accessToken, dispatch, userId, udUser);
     };
 
-    const handleDelete = (id) => {
-        if (window.confirm("Bạn có đồng ý xoá tài khoản này không??")) {
-            deleteUser(user?.accessToken, dispatch, id, navigate);
-        }
-    }
-
     return (
         <main className="userUpdate-container">
             <div className="userUpdate-container_top">
@@ -47,9 +40,7 @@ const User = () => {
                     {userInfo && (
                         <div>
                             <div style={{ margin: '0px', justifyContent: 'center', fontWeight: 950, fontSize: '1.3rem' }}>
-                                {/* <strong style={{ fontWeight: 950, fontSize: '1.3rem' }}> */}
-                                    {userInfo.admin ? "Admin" : "User"}
-                                {/* </strong> */}
+                                {userInfo.admin ? "Admin" : "User"}
                             </div>
                             <div>
                                 <div style={{ marginTop: '3px' }}>
@@ -60,19 +51,9 @@ const User = () => {
                                     <div><strong>Email:</strong></div>
                                     <div>{userInfo.email}</div>
                                 </div>
-                                <div>
-                                    <div><strong>Mật khẩu:</strong></div>
-                                    <div>{userInfo.password}</div>
-                                </div>
                             </div>
                         </div>
                     )}
-                </div>
-                <div
-                    className="delete-user-updateContainer"
-                    onClick={() => handleDelete(userId)}
-                >
-                    Xoá tài khoản
                 </div>
             </div>
 
@@ -111,16 +92,6 @@ const User = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <div>
-                            <label style={{ marginRight: '56px' }}>ADMIN</label>
-                            <input
-                                type="admin"
-                                placeholder="True or False"
-                                // required
-                                // value={userInfo.admin}
-                                onChange={(e) => setAdmin(e.target.value)}
-                            />
-                        </div>
                         <button type="submit"> Cập nhật </button>
                     </form>
                     {/* )}  */}
@@ -129,4 +100,4 @@ const User = () => {
         </main>
     )
 }
-export default User;
+export default UserInfo;

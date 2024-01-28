@@ -4,7 +4,7 @@
     background-color: #F5F5F5;
     min-height: 510px;
     width: 180vh;
-    margin-top: 60px;
+    margin-top: 80px;
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -33,16 +33,27 @@
     margin-top: 9px;
 }
 
-.userUpdate-Info {
+.userUpdate-Info>div {
     display: flex;
-    flex-direction: colume;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .userUpdate-Info>div>div {
     display: flex;
-    flex-direction: colume;
+    flex-direction: column;
     align-items: baseline;
-    margin: 8px 50px;
+    margin: 2px 50px;
+    /* margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px; */
+}
+
+.userUpdate-Info>div>div>div {
+    display: flex;
+    align-items: baseline;
+    margin: 2px 50px;
     /* margin-bottom: 10px;
     margin-left: 50px;
     margin-right: 50px; */
@@ -96,6 +107,7 @@
 .userUpdate-updateFrom {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 0px;
 }
 
@@ -106,12 +118,16 @@
 }
 
 .userUpdate-updateFrom>div>label {
+    color: #000;
+    font-weight: 550;
+    font-size: 0.9rem;
     margin-right: 20px;
 }
 
 .userUpdate-updateFrom>div>input {
     margin: 5px 0;
-    width: 160px;
+    width: 170px;
+    padding: 5px;
 }
 
 .userUpdate-updateFrom>button {
