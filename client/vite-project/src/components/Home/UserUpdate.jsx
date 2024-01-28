@@ -47,9 +47,7 @@ const User = () => {
                     {userInfo && (
                         <div>
                             <div style={{ margin: '0px', justifyContent: 'center', fontWeight: 950, fontSize: '1.3rem' }}>
-                                {/* <strong style={{ fontWeight: 950, fontSize: '1.3rem' }}> */}
                                     {userInfo.admin ? "Admin" : "User"}
-                                {/* </strong> */}
                             </div>
                             <div>
                                 <div style={{ marginTop: '3px' }}>

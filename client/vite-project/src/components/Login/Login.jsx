@@ -33,7 +33,7 @@ const Login = () => {
           placeholder="Enter your password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit"> Continue </button>
+        <button className="login-button" type="submit"> Continue </button>
       </form>
       <div className="login-register"> Don't have an account yet? </div>
       <Link className="login-register-link" to="/register">

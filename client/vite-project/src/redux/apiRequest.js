@@ -6,6 +6,10 @@ import { getUsersStart, getUsersFailed, getUsersSuccess } from "./userSlice";
 import { deleteUserStart, deleteUserFailed, deleteUserSuccess } from "./userSlice";
 import { getUserStart, getUserFailed, getUserSuccess } from "./userSlice";
 import { updateUserStart, updateUserFailed, updateUserSuccess } from "./userSlice";
+import { getBinsStart, getBinsFailed, getBinsSuccess } from "./binSlice";
+import { deleteBinStart, deleteBinFailed, deleteBinSuccess } from "./binSlice";
+import { getBinStart, getBinFailed, getBinSuccess } from "./binSlice";
+import { updateBinStart, updateBinFailed, updateBinSuccess } from "./binSlice";
 
 export const loginUser = async (user, dispatch, navigate) => {
   dispatch(loginStart());
@@ -88,5 +92,41 @@ export const updateUser = async (accessToken, dispatch, id, user) => {
     dispatch(updateUserSuccess(res));
   } catch (err) {
     dispatch(updateUserFailed());
+  }
+};
+
+export const getAllBins = async (dispatch) => {
+  dispatch(getBinsStart());
+  try {
+    const res = await axios.get("/api/get-all-bin");
+    dispatch(getBinsSuccess(res));
+  } catch (err) {
+    dispatch(getBinsFailed());
+  }
+};
+
+export const deleteBin = async (dispatch, binId, navigate) => {
+  dispatch(deleteBinStart());
+  try {
+    const res = await axios.delete("/api/delete-bin", {
+      data: { id: binId },
+    });
+
+    dispatch(deleteBinSuccess("Xoá thành công"));
+    navigate("/bin");
+  } catch (err) {
+    dispatch(deleteBinFailed("Không thành công"));
+  }
+};
+
+export const updateBin = async ( dispatch, bin ) => {
+  dispatch(updateBinStart());
+  try {
+    const res = await axios.put("/api/update-bin", bin,
+    // { headers: { token: `Bearer ${accessToken}`} },
+    );
+    dispatch(updateBinSuccess(res));
+  } catch (err) {
+    dispatch(updateBinFailed());
   }
 };

@@ -34,6 +34,16 @@ const NavBar = () => {
         <></>
       )}
 
+      {user?.admin ? (
+        <div>
+          <i class="fa-solid fa-trash-can icon-allbin"></i>
+          <Link to="/bin" className={`navbar-allbin ${selectedLink === "allbin" ? "selected" : ""}`} onClick={() => setSelectedLink("allbin")}> Bin </Link>
+        </div>
+
+      ) : (
+        <></>
+      )}
+
       {user ? (
         <>
           <div>

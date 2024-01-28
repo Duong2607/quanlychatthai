@@ -1,32 +1,8 @@
-/* .register-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 3rem;
-  border-radius: 12px;
-  height: 400px;
-  min-width: 50vh;
-  background-color: rgb(218, 218, 218);
-  text-align:center;
-}
-
-.register-title {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-.register-error{
-  margin-top:1rem;
-  align-self:center;
-  color:rgb(255, 0, 55);
-} */
-
-/* register.css */
-
 .register-container {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  margin-top: 4rem;
+  padding: 10px 40px 8px;
   border: 1px solid #3498db;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
@@ -60,18 +36,17 @@ input {
   color: #333;
 }
 
-button {
-  background-color: #3498db;
-  color: #2980b9;
-  border: 2px solid #2980b9;
-  padding: 14px;
-  border: none;
+.register-button {
+  background-color: #2980b9;
+  color: #fff;
+  padding: 9px;
+  margin-top: 8px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 18px;
 }
 
-button:hover {
-  background-color: #2980b9;
+.register-button:hover {
+  background-color: #1b5a7f;
   color: #fff;
 }

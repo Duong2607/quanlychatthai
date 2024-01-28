@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../redux/apiRequest";
 import "./register.css";
 const Register = () => {
@@ -41,8 +41,12 @@ const Register = () => {
           placeholder="Enter your password"
           onChange={(e)=>setPassword(e.target.value)}
         />
-        <button type="submit"> Create account </button>
+        <button className="register-button" type="submit"> Create account </button>
       </form>
+      <div className="login-register"> Do you already have an account? </div>
+      <Link className="login-register-link" to="/login">
+        Login now
+      </Link>
     </section>
   );
 };
