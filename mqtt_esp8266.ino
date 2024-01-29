@@ -5,9 +5,15 @@
 
 
 
+<<<<<<< HEAD:mqtt_esp8266/mqtt_esp8266.ino
 const char* ssid = "....";         // Ten wifi
 const char* password = "....";     // Mat khau wifi
 const char* mqtt_server = "....";  // ip local broker
+=======
+const char* ssid = "..."; // Ten wifi
+const char* password = "..."; // Mat khau wifi
+const char* mqtt_server = "..."; // ip broker
+>>>>>>> 692236132a1330a75c4bd2249d3df7ea7be3d73d:mqtt_esp8266.ino
 
 const int trigPin = D7;
 const int echoPin = D8;
