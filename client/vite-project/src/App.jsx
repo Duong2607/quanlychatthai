@@ -15,7 +15,6 @@ import UserInfo from "./components/Home/UserInfo";
 import BinUpdate from "./components/Bin/BinUpdate";
 import AllBin from "./components/Bin/AllBin";
 import AddNewBin from "./components/Bin/AddNewBin";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import NavBar from "./components/NavBar/NavBar";
@@ -28,9 +27,12 @@ function App() {
 
     <Router>
       <NavBar />
-      <div className="App">
-        <Routes>
-          {/* <Route path="/" element={<HomePage />}/> */}
+      {/* <div className="App"> */}
+      <Routes>
+        <>
+
+          <Route path="/" element={<HomePage />} />
+          <Route path="/test" element={<Test />} />
           <Route path="/user" element={<HomePage1 />} />
           <Route path="/user-information/:userId" element={<UserInfo />} />
           <Route path="/user/update/:userId" element={<UserUpdate />} />
@@ -39,8 +41,10 @@ function App() {
           <Route path="/bin/add" element={<AddNewBin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-        </Routes>
-      </div>
+        </>
+
+      </Routes>
+      {/* </div> */}
     </Router>
 
 

@@ -51,7 +51,7 @@ async function mqttconnect(io) {
                     }).catch((err) => {
                         console.log('err', err);
                     })
-                }, 30000); // 30 seconds
+                }, 60000 * 10); // 30 seconds
                 client.subscribe("connecting")
                 client.subscribe(topic);
                 client.subscribe('changedb');

@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import { SearchControl, OpenStreetMapProvider, GeoSearchControl } from "leaflet-geosearch";
 import { useMap } from 'react-leaflet';
 import { useLocation } from 'react-router-dom';
-import LeafletgeoSearch from './leaflet/leafletgeosearch';
+import LeafletgeoSearchForAdmin from './leaflet/leafletgeosearchforadmin'
 import "leaflet-geosearch/dist/geosearch.css";
 import "leaflet-geosearch/dist/geosearch.umd.js";
 import "./Test.scss"
@@ -93,7 +93,7 @@ function Test() {
                 <h1>Hello</h1>
             </div>
             <MapContainer center={position} zoom={12} scrollWheelZoom={false} style={{ display: 'none' }} ref={mapRef}>
-                <LeafletgeoSearch callBack={callBack}></LeafletgeoSearch>
+                <LeafletgeoSearchForAdmin callBack={callBack}></LeafletgeoSearchForAdmin>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
