@@ -30,7 +30,7 @@ function CURDBinUi(props) {
     useEffect(() => {
 
 
-        const forms = document.querySelectorAll('form');
+        //         const forms = document.querySelectorAll('form');
 
         console.log(forms)
         // props.bins.map(async (item, index) => {

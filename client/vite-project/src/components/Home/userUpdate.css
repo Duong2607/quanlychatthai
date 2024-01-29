@@ -1,0 +1,147 @@
+/* Info */
+.userUpdate-container {
+    display: flex;
+    background-color: #F5F5F5;
+    min-height: 510px;
+    width: 180vh;
+    margin-top: 80px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userUpdate-container_top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #e4e4e4; */
+    background-color: rgb(236, 235, 235);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-bottom: 15px;
+    width: 400px;
+}
+
+.userUpdate-container_top:hover{
+    background-color: #e4e4e4;
+}
+
+.userInfo-title{
+    font-weight: 750;
+    font-size: 1.3rem;
+    margin-top: 9px;
+}
+
+.userUpdate-Info>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userUpdate-Info>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 2px 50px;
+    /* margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px; */
+}
+
+.userUpdate-Info>div>div>div {
+    display: flex;
+    align-items: baseline;
+    margin: 2px 50px;
+    /* margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px; */
+}
+
+.userUpdate-Info strong {
+    margin-right: 10px;
+}
+
+.delete-user-updateContainer{
+    cursor: pointer;
+    border: none;
+    align-self: center;
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(240, 34, 96);
+    width: 120px;
+}
+
+.delete-user-updateContainer:hover{
+    background-color:rgb(207, 18, 75);
+}
+
+/* Update */
+.userUpdate-container_bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-bottom: 13px;
+    margin-top: 23px;
+    width: 400px;
+    /* background-color: #e4e4e4; */
+    background-color: rgb(236, 235, 235);
+}
+
+.userUpdate-container_bottom:hover{
+    background-color: #e4e4e4;
+}
+
+.userUpdate-title {
+    font-weight: 750;
+    font-size: 1.3rem;
+    margin-top: 9px;
+}
+
+.userUpdate-updateFrom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.userUpdate-updateFrom>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userUpdate-updateFrom>div>label {
+    color: #000;
+    font-weight: 550;
+    font-size: 0.9rem;
+    margin-right: 20px;
+}
+
+.userUpdate-updateFrom>div>input {
+    margin: 5px 0;
+    width: 170px;
+    padding: 5px;
+}
+
+.userUpdate-updateFrom>button {
+    cursor: pointer;
+    border: none;
+    align-self: center;
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    padding: 0.45rem 1rem;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(25, 135, 84);
+}
+
+.userUpdate-updateFrom>button:hover{
+    background-color:#0B6E4F;
+}

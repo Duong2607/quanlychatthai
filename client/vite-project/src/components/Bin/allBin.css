@@ -1,0 +1,135 @@
+.homeBin-container{
+    display: flex;
+    background-color: #F5F5F5;
+    min-height: 515px;
+    width: 180vh;
+    margin: 80px 0px 0px 0px;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homeBin-title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-left: 410px;
+    padding-right: 18px;
+    margin-top: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.homeBin-title{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.addNewBin-container{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #2980b9;
+}
+
+.addNewBin{
+    color: #fff;
+    margin-left: 3px;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 80px;
+}
+
+.addNewBin:hover{
+    color: #fff;
+}
+
+.addNewBin-container:hover{
+    background-color: #1b5a7f;
+}
+
+.home-userlist{
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 10px;
+    margin: 0px 58px;
+}
+
+.bin-container{
+    display: flex;
+    width: 200px;
+    height: 180px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: rgb(236, 235, 235); */
+    background-color: #e4e4e4;
+    border-radius: 10px;
+    margin: 5px 21px 30px;
+}
+
+.home-bin{
+    margin-top: 10px;
+    /* background-color: rgb(194, 194, 194); */
+    background-color: #CFCFCF;
+    padding:0.5rem;
+    border-radius: 8px;
+    width: 170px;
+    height: 100px;
+
+}
+/* .home-role{
+    margin-top: 1rem;
+    font-size: 1.25rem;
+} */
+
+.user-sua-xoa{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8px;
+}
+.sua-user{
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 750;
+    background-color: #e4e4e4;
+    padding:0.35rem;
+    border-radius: 5px;
+    color:rgb(25, 135, 84);
+    border: 2px solid rgb(25, 135, 84);
+    width: 40%;
+    margin: 0px 3px;
+}
+
+.sua-user:hover{
+    background-color: rgb(25, 135, 84);
+    color:white;
+}
+
+.delete-user{
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 750;
+    background-color: #e4e4e4;
+    padding:0.35rem;
+    border-radius: 5px;
+    color:rgb(240, 34, 96);
+    width: 40%;
+    margin: 0px 3px;
+    border: 2px solid rgb(240, 34, 96);
+}
+.delete-user:hover{
+    color:white;
+    background-color: rgb(240, 34, 96);
+}
+.navbar {
+   display: flex;
+}
+.errorMsg{
+    margin-top: 3rem;
+    font-size: 1.5rem;
+}

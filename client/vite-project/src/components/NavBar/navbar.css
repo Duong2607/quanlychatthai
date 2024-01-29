@@ -1,0 +1,116 @@
+.navbar-container{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    justify-content: center;
+    background-color: rgb(228, 228, 228);
+    align-items: center;
+}
+.navbar-container > *{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-container>div{
+    margin: 0 1.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    color:rgb(0, 99, 230);
+}
+
+.navbar-home{
+    font-weight: 750;
+    font-size: 1.3rem;
+    color:rgb(163, 162, 162);
+}
+
+.navbar-alluser{
+    font-weight: 750;
+    font-size: 1.3rem;
+    color:rgb(163, 162, 162);
+}
+
+.navbar-allbin {
+    font-weight: 750;
+    font-size: 1.3rem;
+    color:rgb(163, 162, 162);
+}
+
+.navbar-login {
+    font-weight: 750;
+    font-size: 1.3rem;
+    color:rgb(163, 162, 162);
+}
+
+.navbar-register{
+    font-weight: 750;
+    font-size: 1.3rem;
+    color:rgb(163, 162, 162);
+}
+
+.navbar-user{
+    font-weight: 750;
+    font-size: 1.3rem;
+    color: rgb(0, 154, 165);
+}
+
+.icon-user:hover{
+    font-weight: 500;
+}
+
+.navbar-logout {
+    font-weight: 750;
+    font-size: 1.3rem;
+    color:rgb(156, 156, 156);
+    padding:0.35rem;
+}
+
+.navbar-home.selected,
+.navbar-allbin.selected
+.navbar-alluser.selected,
+.navbar-login.selected,
+.navbar-register.selected,
+.navbar-user.selected {
+    color:rgb(255, 255, 255);
+    background-color: rgb(150, 150, 150);
+    padding:0.35rem;
+    border-radius: 6px;
+}
+
+.navbar-user.selected {
+    color: #2E8B57;
+}
+
+.navbar-home.selected:hover,
+.navbar-allbin.selected:hover,
+.navbar-alluser.selected:hover,
+.navbar-login.selected:hover,
+.navbar-register.selected:hover,
+.navbar-user.selected:hover {
+    color:#535bf2;;
+}
+
+.icon-home, .icon-alluser, .icon-allbin, .icon-user, .icon-logout, .icon-login, .icon-register {
+    font-size: 1.7em;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.icon-user{
+    font-weight: 600;
+}
+
+.icon-login{
+    font-size: 1.9em;
+}
+
+.icon-register{
+    font-size: 1.68em;
+}
+
+.icon-allbin:hover{
+    font-weight: 200;
+}
