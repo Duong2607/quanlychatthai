@@ -24,10 +24,11 @@ const NavBar = () => {
         <i className="fa-solid fa-house icon-home"></i>
         <Link to="/" className={`navbar-home ${selectedLink === "home" ? "selected" : ""}`} onClick={() => setSelectedLink("home")}> Home </Link>
       </div>
+
       {user?.admin ? (
         <div>
-          <i class="fa-solid fa-users-gear icon-alluser"></i>
-          <Link to="/user" className={`navbar-alluser ${selectedLink === "alluser" ? "selected" : ""}`} onClick={() => setSelectedLink("alluser")}> User </Link>
+          <i class="fa-solid fa-trash-can icon-allbin"></i>
+          <Link to="/bin" className={`navbar-allbin ${selectedLink === "allbin" ? "selected" : ""}`} onClick={() => setSelectedLink("allbin")}> Bin </Link>
         </div>
 
       ) : (
@@ -36,8 +37,8 @@ const NavBar = () => {
 
       {user?.admin ? (
         <div>
-          <i class="fa-solid fa-trash-can icon-allbin"></i>
-          <Link to="/bin" className={`navbar-allbin ${selectedLink === "allbin" ? "selected" : ""}`} onClick={() => setSelectedLink("allbin")}> Bin </Link>
+          <i class="fa-solid fa-users-gear icon-alluser"></i>
+          <Link to="/user" className={`navbar-alluser ${selectedLink === "alluser" ? "selected" : ""}`} onClick={() => setSelectedLink("alluser")}> User </Link>
         </div>
 
       ) : (

@@ -35,7 +35,7 @@ const UserInfo = () => {
     return (
         <main className="userUpdate-container">
             <div className="userUpdate-container_top">
-                <div className="userInfo-title">Thông tin tài khoản</div>
+                <div className="userInfo-title">Thông tin cá nhân</div>
                 <div className="userUpdate-Info">
                     {userInfo && (
                         <div>

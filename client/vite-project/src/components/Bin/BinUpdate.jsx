@@ -10,9 +10,9 @@ const BinUpdate = () => {
     const [ip, setIp] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
+    const [address, setAddress] = useState("");
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [updateTrigger, setUpdateTrigger] = useState(0);
 
     const findBinById = (binsArray, targetId) => {
         return binsArray.find(bin => bin._id === targetId);
@@ -27,6 +27,7 @@ const BinUpdate = () => {
             ip: ip,
             lat: lat,
             lng: lng,
+            address: address,
         };
         try {
             await updateBin(dispatch, newBin);
@@ -49,6 +50,11 @@ const BinUpdate = () => {
                 <div className="binUpdate-Info">
                     {currentBin && (
                         <div>
+                            {currentBin.connect ? (
+                                <div style={{ fontWeight: 750, fontSize: '0.9rem', overflowWrap: 'break-word', }}>Connect: True</div>
+                            ) : (
+                                <div style={{ fontWeight: 750, fontSize: '0.9rem', overflowWrap: 'break-word', }}>Connect: False</div>
+                            )}
                             <div style={{ margin: '0px', justifyContent: 'center', fontWeight: 950, fontSize: '1.3rem' }}>
                                 <i className="fa-regular fa-trash-can fa-2x"></i>
                             </div>
@@ -65,6 +71,10 @@ const BinUpdate = () => {
                                     <div><strong>Địa chỉ (lng):</strong></div>
                                     <div>{currentBin.lng}</div>
                                 </div>
+                                <div>
+                                    <div><strong>Địa chỉ:</strong></div>
+                                    <div>{currentBin.address}</div>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -73,7 +83,7 @@ const BinUpdate = () => {
                     className="delete-user-updateContainer"
                     onClick={() => handleDelete(binId)}
                 >
-                    Xoá tài khoản
+                    Xoá thùng rác
                 </div>
             </div>
 
@@ -103,6 +113,14 @@ const BinUpdate = () => {
                                 type="text"
                                 placeholder="Enter new address"
                                 onChange={(e) => setLng(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label>ADDRESS</label>
+                            <input
+                                type="text"
+                                placeholder="Enter new address"
+                                onChange={(e) => setAddress(e.target.value)}
                             />
                         </div>
                         <button type="submit"> Cập nhật </button>

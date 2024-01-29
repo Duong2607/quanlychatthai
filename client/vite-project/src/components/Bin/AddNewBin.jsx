@@ -8,6 +8,8 @@ const AddNewBin = () => {
     const [ip, setIp] = useState("");
     const [lat, setLat] = useState("");
     const [lng, setLng] = useState("");
+    const [address, setAddress] = useState("");
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -17,6 +19,7 @@ const AddNewBin = () => {
             ip: ip,
             lat: lat,
             lng: lng,
+            address: address,
         };
         try {
             await addBin(dispatch, newBin, navigate);
@@ -57,6 +60,14 @@ const AddNewBin = () => {
                                 type="text"
                                 placeholder="Enter new address"
                                 onChange={(e) => setLng(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label>ADDRESS</label>
+                            <input
+                                type="text"
+                                placeholder="Enter new address"
+                                onChange={(e) => setAddress(e.target.value)}
                             />
                         </div>
                         <button type="submit"> Thêm </button>

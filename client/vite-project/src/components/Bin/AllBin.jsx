@@ -53,8 +53,12 @@ const AllBin = () => {
               <Link to={`#`} className="home-bin">
                 <div><i className="fa-regular fa-trash-can fa-2x"></i></div>
                 <div style={{ fontWeight: 950, fontSize: '1rem' }} >{bin.ip}</div>
-                <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.lat}</div>
-                <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.lng}</div>
+                <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>{bin.address}</div>
+                {bin.connect ? (
+                  <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>Connect: True</div>
+                ) : (
+                  <div style={{ fontWeight: 750, fontSize: '0.7rem', overflowWrap: 'break-word', }}>Connect: False</div>
+                )}
               </Link>
 
               <div className="user-sua-xoa">
